@@ -9,23 +9,21 @@ eval "$(conda shell.bash hook)"
 
 # Check if "voidFormer" environment already exists
 if conda env list | grep -qw 'voidFormer'; then
-    echo "Conda environment 'voidFormer' already exists. Skipping creation. Activating pokerenv."
+    echo "Conda environment 'voidFormer' already exists. Skipping creation. Activating voidFormer."
 else
     echo "Creating conda environment 'voidFormer'."
-    conda create --name voidFormer python=3.10 -y
+    conda create --name voidFormer python=3.9 -y
 fi
 
 conda activate voidFormer
 
 # Install packages if not already installed
 echo "Installing packages..."
-# conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio -c pytorch -c nvidia -y
-# conda install transformers pandas numpy=1.26.4 tqdm scikit-learn -y
 
 # Install additional Python packages from requirements.txt
 if [ -f "$SCRIPT_DIR/requirements.txt" ]; then
-    echo "Installing pip packages from requirements.txt"
-    pip install -r "$SCRIPT_DIR/requirements.txt"
+    echo "Installing pip packages from requirements.txt using PyTorch CUDA index URL"
+    pip install -r "$SCRIPT_DIR/requirements.txt" --index-url https://download.pytorch.org/whl/cu121
 else
     echo "No requirements.txt found. Skipping pip installations."
 fi
