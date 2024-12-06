@@ -1,7 +1,11 @@
-# Spanish-to-English Translation Model
+# English-to-Spanish Translation Model
 
 ## Overview
-This project involves developing a state-of-the-art translation model from scratch using the Transformer architecture. The focus is on Spanish-to-English translation, leveraging the attention mechanism to achieve high translation accuracy. The project includes:
+
+This project is inspired by and follows the research outlined in the paper ["Attention Is All You Need"](https://arxiv.org/abs/1706.03762). It implements the Transformer architecture introduced in the paper, focusing on English-to-Spanish translation.
+
+## Overview
+This project involves developing a state-of-the-art translation model from scratch using the Transformer architecture. The focus is on English-to-Spanish translation, leveraging the attention mechanism to achieve high translation accuracy. The project includes:
 
 - Custom model architecture design.
 - Hyperparameter tuning.
@@ -16,7 +20,7 @@ The model has been trained on the **Helsinki-NLP/opus_books** dataset, which con
 - Supports positional encoding and multi-head attention.
 - Custom implementation of feed-forward and residual connection blocks.
 - Comprehensive training and evaluation pipelines.
-- Achieves state-of-the-art BLEU scores for Spanish-to-English translation.
+- Achieves state-of-the-art BLEU scores for English-to-Spanish translation.
 
 ---
 
@@ -93,30 +97,28 @@ The model is based on the Transformer architecture, which consists of:
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository_url>
-   cd <repository_name>
+   git clone https://github.com/SergioPeterson/VoidFormer
    ```
 
-2. **Install dependencies:**
+2.**Set up the environment:**
+   ```bash
+   source env_setup.sh
+   ```
+3.  **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Set up the environment:**
-   ```bash
-   source env_setup.sh
-   ```
-
-4. **Prepare the dataset:**
+5. **Prepare the dataset:**
    - Download the `Helsinki-NLP/opus_books` dataset.
    - The dataset will automatically be processed during training.
 
-5. **Train the model:**
+6. **Train the model:**
    ```bash
    python train.py
    ```
 
-6. **Translate a sentence:**
+7. **Translate a sentence:**
    ```bash
    python translate.py --sentence "Hola, ¿cómo estás?" --model weights/latest_model.pt
    ```
@@ -162,9 +164,9 @@ After training on 1.25M sentences for 20 epochs with a learning rate of 1e-4, th
 
 ## Contributions
 
-Developed by [Your Name].
+Developed by Sergio W. Peterson.
 
-For questions, feel free to contact me at [your_email@example.com].
+For questions, feel free to contact me at Sergiopeterson.dev@gmail.com.
 
 ---
 
